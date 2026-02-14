@@ -10,202 +10,343 @@ struct player
     int power;
 };
 
-vector<player> FW;
-FW.push_back({"Mohamed Salah","FW",91}); // 0
-FW.push_back({"Alexander Isak","FW",88}); // 1
-FW.push_back({"Hugo Ekitiké","FW",83}); // 2
-FW.push_back({"Cody Gakpo","FW",84}); // 3
-FW.push_back({"Federico Chiesa","FW",81}); // 4 
-FW.push_back({"Viktor Gyökeres", "FW", 87}); // 5
-FW.push_back({"Leandro Trossard", "FW", 83});  // 6
-FW.push_back({"Kai Havertz", "FW", 83}); // 7 
-FW.push_back({"Gabriel Martinelli", "FW", 83}); // 8
-FW.push_back({"Noni Madueke", "FW", 77}); // 9
-FW.push_back({"Gabriel Jesus", "FW", 82}); // 10
-FW.push_back({"Erling Haaland", "FW", 91}); // 11
-FW.push_back({"Omar Marmoush", "FW", 79}); // 12
-FW.push_back({"Phil Foden", "FW", 88}); // 13
-FW.push_back({"Savinho", "FW", 82}); // 14
-FW.push_back({"Rayan Cherki", "FW", 76}); // 15
-FW.push_back({"Jérémy Doku", "FW", 80}); // 16
-FW.push_back({"Oscar Bobb", "FW", 73}); // 17
-FW.push_back({"João Pedro", "FW", 77}); // 18
-FW.push_back({"Liam Delap", "FW", 70}); // 19
-FW.push_back({"Raheem Sterling", "FW", 81}); // 20
-FW.push_back({"Pedro Neto", "FW", 77}); // 21
-FW.push_back({"Estêvão", "FW", 73}); // 22
-FW.push_back({"Jamie Gittens", "FW", 74}); // 23
-FW.push_back({"Bryan Mbeumo", "FW", 79}); // 24
-FW.push_back({"Benjamin Šeško", "FW", 79}); // 25
-FW.push_back({"Joshua Zirkzee", "FW", 79}); // 26
-FW.push_back({"Anthony Gordon", "FW", 81}); // 27
-FW.push_back({"Yoane Wissa", "FW", 77}); // 28
-FW.push_back({"Jacob Murphy", "FW", 75}); // 29
-FW.push_back({"Anthony Elanga", "FW", 75}); // 30
-FW.push_back({"Harvey Barnes", "FW", 79}); // 31
-FW.push_back({"Nick Woltemade", "FW", 70}); // 32
-FW.push_back({"Jacob Ramsey", "FW", 78}); // 33
-FW.push_back({"Ollie Watkins", "FW", 85}); // 34
-FW.push_back({"John McGinn", "FW", 82}); // 35
-FW.push_back({"Evann Guessand", "FW", 74}); // 36
-FW.push_back({"Donyell Malen", "FW", 81}); // 37
-FW.push_back({"Jadon Sancho", "FW", 81}); // 38
-FW.push_back({"Brian Brobbey", "FW", 79}); // 39
-FW.push_back({"Simon Adingra", "FW", 75}); // 40
-FW.push_back({"Bertrand Traoré", "FW", 75}); // 41
-FW.push_back({"Chemsdine Talbi", "FW", 65}); // 42
-FW.push_back({"Wilson Isidor", "FW", 71}); // 43
-FW.push_back({"Eliezer Mayenda", "FW", 63}); // 44
-FW.push_back({"Romaine Mundle", "FW", 64}); // 45
-FW.push_back({"Abdoullah Ba", "FW", 68}); // 46
-FW.push_back({"Ian Poveda", "FW", 68}); // 47
-FW.push_back({"Jack Grealish", "FW", 84}); // 48
-FW.push_back({"Illiman Ndiaye", "FW", 76}); // 49
-FW.push_back({"Dwight McNeil", "FW", 77}); // 50
-FW.push_back({"Thierno Barry", "FW", 68}); // 51
-FW.push_back({"Beto", "FW", 76}); // 52
-FW.push_back({"Tyler Dibling", "FW", 62}); // 53
-FW.push_back({"Randal Kolo Muani", "FW", 82}); // 54
-FW.push_back({"Mohammed Kudus", "FW", 82}); // 55
-FW.push_back({"Dominic Solanke", "FW", 81}); // 56
-FW.push_back({"Brennan Johnson", "FW", 78}); // 57
-FW.push_back({"Richarlison", "FW", 81}); // 58
-FW.push_back({"Mathys Tel", "FW", 77}); // 59
-FW.push_back({"Wilson Odobert", "FW", 73}); // 60
-FW.push_back({"Dane Scarlett", "FW", 67}); // 61
-FW.push_back({"Dejan Kulusevski", "FW", 81}); // 62
-FW.push_back({"Alex Iwobi", "FW", 77}); // 63
-FW.push_back({"Samuel Chukwueze", "FW", 79}); // 64
-FW.push_back({"Raúl Jiménez", "FW", 76}); // 65
-FW.push_back({"Adama Traoré", "FW", 75}); // 66
-FW.push_back({"Harry Wilson", "FW", 76}); // 67
-FW.push_back({"Kevin", "FW", 75}); // 68
-FW.push_back({"Rodrigo Muniz", "FW", 76}); // 69
-FW.push_back({"Kaoru Mitoma", "FW", 81}); // 70
-FW.push_back({"Danny Welbeck", "FW", 76}); // 71
-FW.push_back({"Yankuba Minteh", "FW", 74}); // 72
-FW.push_back({"Solly March", "FW", 78}); // 73
-FW.push_back({"Charalampos Kostoulas", "FW", 62}); // 74
-FW.push_back({"Stefanos Tzimas", "FW", 65}); // 75
-FW.push_back({"Tom Watson", "FW", 60}); // 76
-FW.push_back({"Jean-Philippe Mateta", "FW", 79}); // 77
-FW.push_back({"Yeremy Pino", "FW", 79}); // 78
-FW.push_back({"Chrisantus Uche", "FW", 68}); // 79
-FW.push_back({"Eddie Nketiah", "FW", 76}); // 80
-FW.push_back({"Jesurun Rak-Sakyi", "FW", 70}); // 81
-FW.push_back({"Romain Esse", "FW", 62}); // 82
-FW.push_back({"Kevin Schade", "FW", 73}); // 83
-FW.push_back({"Dango Ouattara", "FW", 74}); // 84
-FW.push_back({"Reiss Nelson", "FW", 74}); // 85
-FW.push_back({"Igor Thiago", "FW", 75}); // 86
-FW.push_back({"Myles Peart-Harris", "FW", 65}); // 87
-FW.push_back({"Gustavo Nunes", "FW", 70}); // 88
-FW.push_back({"Antoine Semenyo", "FW", 75}); // 89
-FW.push_back({"Evanilson", "FW", 78}); // 90
-FW.push_back({"Amine Adli", "FW", 79}); // 91
-FW.push_back({"Enes Ünal", "FW", 78}); // 92
-FW.push_back({"Marcus Tavernier", "FW", 76}); // 93
-FW.push_back({"Romain Faivre", "FW", 76}); // 94
-FW.push_back({"David Brooks", "FW", 74}); // 95
-FW.push_back({"Eli Junior Krouli", "FW", 70}); // 96
-FW.push_back({"Ben Doak", "FW", 66}); // 97
+int main()
+
+{
+
+vector<player> FW = {     // กองหน้า
+    { "Mohamed Salah",         "FW", 91 },
+    { "Alexander Isak",        "FW", 88 },
+    { "Hugo Ekitiké",          "FW", 83 },
+    { "Cody Gakpo",            "FW", 84 },
+    { "Federico Chiesa",       "FW", 81 },
+    { "Viktor Gyökeres",       "FW", 87 },
+    { "Leandro Trossard",      "FW", 83 },
+    { "Kai Havertz",           "FW", 82 },
+    { "Gabriel Martinelli",    "FW", 81 },
+    { "Noni Madueke",          "FW", 80 },
+    { "Gabriel Jesus",         "FW", 80 },
+    { "Erling Haaland",        "FW", 90 },
+    { "Omar Marmoush",         "FW", 84 },
+    { "Phil Foden",            "FW", 85 },
+    { "Savinho",               "FW", 82 },
+    { "Rayan Cherki",          "FW", 81 },
+    { "Jérémy Doku",           "FW", 80 },
+    { "Oscar Bobb",            "FW", 72 },
+    { "João Pedro",            "FW", 79 },
+    { "Liam Delap",            "FW", 78 },
+    { "Raheem Sterling",       "FW", 78 },
+    { "Pedro Neto",            "FW", 77 },
+    { "Estêvão",               "FW", 78 },
+    { "Jamie Gittens",         "FW", 78 },
+    { "Bryan Mbeumo",          "FW", 85 },
+    { "Benjamin Šeško",        "FW", 80 },
+    { "Joshua Zirkzee",        "FW", 77 },
+    { "Anthony Gordon",        "FW", 83 },
+    { "Yoane Wissa",           "FW", 82 },
+    { "Jacob Murphy",          "FW", 81 },
+    { "Anthony Elanga",        "FW", 81 },
+    { "Harvey Barnes",         "FW", 80 },
+    { "Nick Woltemade",        "FW", 79 },
+    { "Jacob Ramsey",          "FW", 78 },
+    { "Ollie Watkins",         "FW", 84 },
+    { "John McGinn",           "FW", 81 },
+    { "Evann Guessand",        "FW", 79 },
+    { "Donyell Malen",         "FW", 79 },
+    { "Jadon Sancho",          "FW", 80 },
+    { "Brian Brobbey",         "FW", 77 },
+    { "Simon Adingra",         "FW", 76 },
+    { "Bertrand Traoré",       "FW", 75 },
+    { "Chemsdine Talbi",       "FW", 73 },
+    { "Wilson Isidor",         "FW", 72 },
+    { "Eliezer Mayenda",       "FW", 71 },
+    { "Romaine Mundle",        "FW", 71 },
+    { "Abdoullah Ba",          "FW", 66 },
+    { "Ian Poveda",            "FW", 69 },
+    { "Jack Grealish",         "FW", 80 },
+    { "Illiman Ndiaye",        "FW", 79 },
+    { "Dwight McNeil",         "FW", 78 },
+    { "Thierno Barry",         "FW", 77 },
+    { "Beto",                  "FW", 76 },
+    { "Tyler Dibling",         "FW", 74 },
+    { "Randal Kolo Muani",     "FW", 81 },
+    { "Mohammed Kudus",        "FW", 80 },
+    { "Dominic Solanke",       "FW", 80 },
+    { "Brennan Johnson",       "FW", 79 },
+    { "Richarlison",           "FW", 78 },
+    { "Mathys Tel",            "FW", 77 },
+    { "Wilson Odobert",        "FW", 75 },
+    { "Dane Scarlett",         "FW", 67 },
+    { "Dejan Kulusevski",      "FW", 83 },
+    { "Alex Iwobi",            "FW", 80 },
+    { "Samuel Chukwueze",      "FW", 80 },
+    { "Raúl Jiménez",          "FW", 77 },
+    { "Adama Traoré",          "FW", 75 },
+    { "Harry Wilson",          "FW", 76 },
+    { "Kevin",                 "FW", 76 },
+    { "Rodrigo Muniz",         "FW", 75 },
+    { "Kaoru Mitoma",          "FW", 82 },
+    { "Danny Welbeck",         "FW", 78 },
+    { "Yankuba Minteh",        "FW", 77 },
+    { "Solly March",           "FW", 75 },
+    { "Charalampos Kostoulas", "FW", 72 },
+    { "Stefanos Tzimas",       "FW", 72 },
+    { "Tom Watson",            "FW", 68 },
+    { "Jean-Philippe Mateta",  "FW", 82 },
+    { "Yeremy Pino",           "FW", 80 },
+    { "Chrisantus Uche",       "FW", 76 },
+    { "Eddie Nketiah",         "FW", 74 },
+    { "Jesurun Rak-Sakyi",     "FW", 72 },
+    { "Romain Esse",           "FW", 70 },
+    { "Kevin Schade",          "FW", 78 },
+    { "Dango Ouattara",        "FW", 77 },
+    { "Reiss Nelson",          "FW", 75 },
+    { "Igor Thiago",           "FW", 75 },
+    { "Myles Peart-Harris",    "FW", 67 },
+    { "Gustavo Nunes",         "FW", 65 },
+    { "Antoine Semenyo",       "FW", 80 },
+    { "Evanilson",             "FW", 80 },
+    { "Amine Adli",            "FW", 78 },
+    { "Enes Ünal",             "FW", 77 },
+    { "Marcus Tavernier",      "FW", 76 },
+    { "Romain Faivre",         "FW", 76 },
+    { "David Brooks",          "FW", 75 },
+    { "Eli Junior Kroui",      "FW", 74 },
+    { "Ben Doak",              "FW", 71 },
+    { "Bukayo Saka",           "FW", 88 }
+};
 
 
-vector<player> MF;
-MF.push_back({"Florian Wirtz","MF",89}); // 0
-MF.push_back({"Alexis Mac Allister","MF",87}); // 1
-MF.push_back({"Ryan Gravenberch", "MF", 78}); // 2
-MF.push_back({"Dominik Szoboszlai", "MF", 81}); // 3
-MF.push_back({"Curtis Jones", "MF", 79}); // 4
-MF.push_back({"Wataru Endo", "MF", 80}); // 5
-MF.push_back({"Declan Rice", "MF", 87}); // 6
-MF.push_back({"Martin Ødegaard", "MF", 89}); // 7
-MF.push_back({"Mikel Merino", "MF", 84}); // 8
-MF.push_back({"Zubimendi", "MF", 83}); // 9
-MF.push_back({"Eberechi Eze", "MF", 81}); // 10
-MF.push_back({"Rodri", "MF", 91}); // 11
-MF.push_back({"Tijjani Reijnders", "MF", 80}); // 12
-MF.push_back({"Bernardo Silva", "MF", 88}); // 13
-MF.push_back({"Mateo Kovačić", "MF", 83}); // 14
-MF.push_back({"Nico González", "MF", 80}); // 15
-MF.push_back({"Kalvin Phillips", "MF", 78}); // 16
-MF.push_back({"Cole Palmer", "MF", 85}); // 17
-MF.push_back({"Moisés Caicedo", "MF", 82}); // 18
-MF.push_back({"Enzo Fernández", "MF", 82}); // 19
-MF.push_back({"Andrey Santos", "MF", 71}); // 20
-MF.push_back({"Romeo Lavia", "MF", 77}); // 21
-MF.push_back({"Alejandro Garnacho", "MF", 79}); // 22
-MF.push_back({"Dário Essugo", "MF", 69}); // 23
-MF.push_back({"Bruno Fernandes", "MF", 87}); // 24
-MF.push_back({"Matheus Cunha", "MF", 80}); // 25
-MF.push_back({"Casemiro", "MF", 84}); // 26
-MF.push_back({"Manuel Ugarte", "MF", 81}); // 27
-MF.push_back({"Amad Diallo", "MF", 77}); // 28
-MF.push_back({"Kobbie Mainoo", "MF", 77}); // 29
-MF.push_back({"Mason Mount", "MF", 80}); // 30
-MF.push_back({"Bruno Guimarães", "MF", 85}); // 31
-MF.push_back({"Sandro Tonali", "MF", 85}); // 32
-MF.push_back({"Joelinton", "MF", 82}); // 33
-MF.push_back({"Joe Willock", "MF", 78}); // 34
-MF.push_back({"Youri Tielemans", "MF", 82}); // 35
-MF.push_back({"Boubacar Kamara", "MF", 81}); // 36
-MF.push_back({"Morgan Rogers", "MF", 73}); // 37
-MF.push_back({"Amadou Onana", "MF", 80}); // 38
-MF.push_back({"Harvey Elliott", "MF", 78}); // 39
-MF.push_back({"Emiliano Buendía", "MF", 80}); // 40
-MF.push_back({"Ross Barkley", "MF", 79}); // 41
-MF.push_back({"Granit Xhaka", "MF", 86}); // 42
-MF.push_back({"Habib Diarra", "MF", 75}); // 43
-MF.push_back({"Enzo Le Fée", "MF", 77}); // 44
-MF.push_back({"Noah Sadiki", "MF", 71}); // 45
-MF.push_back({"Dan Neil", "MF", 73}); // 46
-MF.push_back({"Chris Rigg", "MF", 61}); // 47
-MF.push_back({"Idrissa Gueye", "MF", 78}); // 48
-MF.push_back({"Kiernan Dewsbury-Hall", "MF", 77}); // 49
-MF.push_back({"James Garner", "MF", 75}); // 50
-MF.push_back({"Carlos Alcaraz", "MF", 74}); // 51
-MF.push_back({"Merlin Röhl", "MF", 73}); // 52
-MF.push_back({"Tim Iroegbunam", "MF", 70}); // 53
-MF.push_back({"Xavi Simons", "MF", 83}); // 54
-MF.push_back({"James Maddison", "MF", 84}); // 55
-MF.push_back({"João Palhinha", "MF", 85}); // 56
-MF.push_back({"Rodrigo Bentancur", "MF", 81}); // 57
-MF.push_back({"Pape Matar Sarr", "MF", 79}); // 58
-MF.push_back({"Yves Bissouma", "MF", 81}); // 59
-MF.push_back({"Lucas Bergvall", "MF", 73}); // 60
-MF.push_back({"Archie Gray", "MF", 73}); // 61
-MF.push_back({"Sander Berge", "MF", 78}); // 62
-MF.push_back({"Saša Lukić", "MF", 77}); // 63
-MF.push_back({"Emile Smith Rowe", "MF", 78}); // 64
-MF.push_back({"Tom Cairney", "MF", 75}); // 65
-MF.push_back({"Harrison Reed", "MF", 77}); // 66
-MF.push_back({"Josh King", "MF", 73}); // 67
-MF.push_back({"Carlos Baleba", "MF", 73}); // 68
-MF.push_back({"Mats Wieffer", "MF", 79}); // 69
-MF.push_back({"Georginio Rutter", "MF", 77}); // 70
-MF.push_back({"Jack Hinshelwood", "MF", 71}); // 71
-MF.push_back({"Yasin Ayari", "MF", 69}); // 72
-MF.push_back({"Brajan Gruda", "MF", 74}); // 73
-MF.push_back({"Diego Gómez", "MF", 71}); // 74
-MF.push_back({"James Milner", "MF", 76}); // 75
-MF.push_back({"Adam Wharton", "MF", 77}); // 76
-MF.push_back({"Ismaïla Sarr", "MF", 77}); // 77
-MF.push_back({"Jefferson Lerma", "MF", 78}); // 78
-MF.push_back({"Daichi Kamada", "MF", 79}); // 79
-MF.push_back({"Cheick Doucouré", "MF", 79}); // 80
-MF.push_back({"Will Hughes", "MF", 75}); // 81
-MF.push_back({"Justin Devenny", "MF", 60}); // 82
-MF.push_back({"Naouirou Ahamada", "MF", 71}); // 83
-MF.push_back({"Mikkel Damsgaard", "MF", 75}); // 84
-MF.push_back({"Jordan Henderson", "MF", 79}); // 85
-MF.push_back({"Mathias Jensen", "MF", 78}); // 86
-MF.push_back({"Vitaly Janelt", "MF", 77}); // 87
-MF.push_back({"Frank Onyeka", "MF", 75}); // 88
-MF.push_back({"Fábio Carvalho", "MF", 77}); // 89
-MF.push_back({"Antoni Milambo", "MF", 69}); // 90
-MF.push_back({"Yehor Yarmoliuk", "MF", 69}); // 91
-MF.push_back({"Ryan Christie", "MF", 77}); // 92
-MF.push_back({"Tyler Adams", "MF", 78}); // 93
-MF.push_back({"Lewis Cook", "MF", 76}); // 94
-MF.push_back({"Justin Kluivert", "MF", 78}); // 95
-MF.push_back({"Alex Scott", "MF", 74}); // 96
+vector<player> MF = {     // กองกลาง
+    { "Florian Wirtz",         "MF", 89 },
+    { "Alexis Mac Allister",   "MF", 87 },
+    { "Ryan Gravenberch",      "MF", 85 },
+    { "Dominik Szoboszlai",    "MF", 83 },
+    { "Curtis Jones",          "MF", 80 },
+    { "Wataru Endo",           "MF", 80 },
+    { "Declan Rice",           "MF", 87 },
+    { "Martin Ødegaard",       "MF", 87 },
+    { "Mikel Merino",          "MF", 83 },
+    { "Zubimendi",             "MF", 83 },
+    { "Eberechi Eze",          "MF", 83 },
+    { "Rodri",                 "MF", 90 },
+    { "Tijjani Reijnders",     "MF", 86 },
+    { "Bernardo Silva",        "MF", 84 },
+    { "Mateo Kovačić",         "MF", 83 },
+    { "Nico González",         "MF", 79 },
+    { "Kalvin Phillips",       "MF", 74 },
+    { "Cole Palmer",           "MF", 87 },
+    { "Moisés Caicedo",        "MF", 87 },
+    { "Enzo Fernández",        "MF", 84 },
+    { "Andrey Santos",         "MF", 80 },
+    { "Romeo Lavia",           "MF", 78 },
+    { "Alejandro Garnacho",    "MF", 77 },
+    { "Dário Essugo",          "MF", 75 },
+    { "Bruno Fernandes",       "MF", 87 },
+    { "Matheus Cunha",         "MF", 83 },
+    { "Casemiro",              "MF", 80 },
+    { "Manuel Ugarte",         "MF", 79 },
+    { "Amad Diallo",           "MF", 79 },
+    { "Kobbie Mainoo",         "MF", 77 },
+    { "Mason Mount",           "MF", 77 },
+    { "Bruno Guimarães",       "MF", 86 },
+    { "Sandro Tonali",         "MF", 86 },
+    { "Joelinton",             "MF", 82 },
+    { "Joe Willock",           "MF", 76 },
+    { "Youri Tielemans",       "MF", 85 },
+    { "Boubacar Kamara",       "MF", 83 },
+    { "Morgan Rogers",         "MF", 82 },
+    { "Amadou Onana",          "MF", 79 },
+    { "Harvey Elliott",        "MF", 78 },
+    { "Emiliano Buendía",      "MF", 77 },
+    { "Ross Barkley",          "MF", 77 },
+    { "Granit Xhaka",          "MF", 85 },
+    { "Habib Diarra",          "MF", 77 },
+    { "Enzo Le Fée",           "MF", 76 },
+    { "Noah Sadiki",           "MF", 74 },
+    { "Dan Neil",              "MF", 73 },
+    { "Chris Rigg",            "MF", 70 },
+    { "Idrissa Gueye",         "MF", 79 },
+    { "Kiernan Dewsbury-Hall", "MF", 77 },
+    { "James Garner",          "MF", 76 },
+    { "Carlos Alcaraz",        "MF", 75 },
+    { "Merlin Röhl",           "MF", 74 },
+    { "Tim Iroegbunam",        "MF", 74 },
+    { "Xavi Simons",           "MF", 84 },
+    { "James Maddison",        "MF", 84 },
+    { "João Palhinha",         "MF", 83 },
+    { "Rodrigo Bentancur",     "MF", 80 },
+    { "Pape Matar Sarr",       "MF", 79 },
+    { "Yves Bissouma",         "MF", 78 },
+    { "Lucas Bergvall",        "MF", 77 },
+    { "Archie Gray",           "MF", 75 },
+    { "Sander Berge",          "MF", 79 },
+    { "Saša Lukić",            "MF", 78 },
+    { "Emile Smith Rowe",      "MF", 77 },
+    { "Tom Cairney",           "MF", 74 },
+    { "Harrison Reed",         "MF", 72 },
+    { "Josh King",             "MF", 68 },
+    { "Carlos Baleba",         "MF", 81 },
+    { "Mats Wieffer",          "MF", 78 },
+    { "Georginio Rutter",      "MF", 77 },
+    { "Jack Hinshelwood",      "MF", 75 },
+    { "Yasin Ayari",           "MF", 75 },
+    { "Brajan Gruda",          "MF", 74 },
+    { "Diego Gómez",           "MF", 73 },
+    { "James Milner",          "MF", 73 },
+    { "Adam Wharton",          "MF", 79 },
+    { "Ismaïla Sarr",          "MF", 79 },
+    { "Jefferson Lerma",       "MF", 77 },
+    { "Daichi Kamada",         "MF", 77 },
+    { "Cheick Doucouré",       "MF", 77 },
+    { "Will Hughes",           "MF", 77 },
+    { "Justin Devenny",        "MF", 71 },
+    { "Naouirou Ahamada",      "MF", 68 },
+    { "Mikkel Damsgaard",      "MF", 80 },
+    { "Jordan Henderson",      "MF", 79 },
+    { "Mathias Jensen",        "MF", 77 },
+    { "Vitaly Janelt",         "MF", 76 },
+    { "Frank Onyeka",          "MF", 74 },
+    { "Fábio Carvalho",        "MF", 74 },
+    { "Antoni Milambo",        "MF", 73 },
+    { "Yehor Yarmoliuk",       "MF", 71 },
+    { "Ryan Christie",         "MF", 79 },
+    { "Tyler Adams",           "MF", 79 },
+    { "Lewis Cook",            "MF", 79 },
+    { "Justin Kluivert",       "MF", 79 },
+    { "Alex Scott",            "MF", 74 }
+};
+
+vector<player> DF = {    // กองหลัง
+    { "Virgil van Dijk",       "DF", 90 },
+    { "Ibrahima Konate",       "DF", 86 },
+    { "Jeremie Frimpong",      "DF", 83 },
+    { "Andrew Robertson",      "DF", 82 },
+    { "Joe Gomez",             "DF", 79 },
+    { "Milos Kerkez",          "DF", 82 },
+    { "William Saliba",        "DF", 88 },
+    { "Benjamin White",        "DF", 83 },
+    { "Jurrien Timber",        "DF", 82 },
+    { "Riccardo Calafiori",    "DF", 78 },
+    { "Gabriel Magalhaes",     "DF", 88 },
+    { "Lewis-Skelly",          "DF", 78 },
+    { "Ruben Dias",            "DF", 86 },
+    { "Josko Gvardiol",        "DF", 84 },
+    { "Nathan Ake",            "DF", 83 },
+    { "John Stones",           "DF", 82 },
+    { "Rico Lewis",            "DF", 77 },
+    { "Abdukodir Khusanov",    "DF", 77 },
+    { "Marc Cucurella",        "DF", 84 },
+    { "Reece James",           "DF", 81 },
+    { "Levi Colwill",          "DF", 80 },
+    { "Malo Gusto",            "DF", 79 },
+    { "Trevoh Chalobah",       "DF", 79 },
+    { "Wesley Fofana",         "DF", 79 },
+    { "Axel Disasi",           "DF", 77 },
+    { "Tosin Adarabioyo",      "DF", 78 },
+    { "Matthijs de Ligt",      "DF", 82 },
+    { "Lisandro Martinez",     "DF", 81 },
+    { "Noussair Mazraoui",     "DF", 80 },
+    { "Harry Maguire",         "DF", 80 },
+    { "Diogo Dalot",           "DF", 79 },
+    { "Luke Shaw",             "DF", 79 },
+    { "Leny Yoro",             "DF", 78 },
+    { "Tyrell Malacia",        "DF", 77 },
+    { "Fabian Schar",          "DF", 82 },
+    { "Sven Botman",           "DF", 82 },
+    { "Kieran Trippier",       "DF", 80 },
+    { "Lewis Hall",            "DF", 80 },
+    { "Tino Livramento",       "DF", 80 },
+    { "Dan Burn",              "DF", 79 },
+    { "Ezri Konsa",            "DF", 82 },
+    { "Lucas Digne",           "DF", 80 },
+    { "Pau Torres",            "DF", 80 },
+    { "Ian Maatsen",           "DF", 79 },
+    { "Matty Cash",            "DF", 79 },
+    { "Tyrone Mings",          "DF", 78 },
+    { "Reinildo Mandava",      "DF", 79 },
+    { "Nordi Mukiele",         "DF", 79 },
+    { "Lutsharel Geertruida",  "DF", 80 },
+    { "Omar Alderete",         "DF", 76 },
+    { "Arthur Masuaku",        "DF", 74 },
+    { "James Tarkowski",       "DF", 80 },
+    { "Jarrad Branthwaite",    "DF", 79 },
+    { "Vitaliy Mykolenko",     "DF", 78 },
+    { "Jake O'Brien",          "DF", 74 },
+    { "Michael Keane",         "DF", 73 },
+    { "Nathan Patterson",      "DF", 71 },
+    { "Pedro Porro",           "DF", 82 },
+    { "Micky van de Ven",      "DF", 82 },
+    { "Cristian Romero",       "DF", 82 },
+    { "Destiny Udogie",        "DF", 80 },
+    { "Kevin Danso",           "DF", 79 },
+    { "Ben Davies",            "DF", 75 },
+    { "Radu Dragusin",         "DF", 75 },
+    { "Antonee Robinson",      "DF", 79 },
+    { "Calvin Bassey",         "DF", 76 },
+    { "Joachim Andersen",      "DF", 79 },
+    { "Kenny Tete",            "DF", 77 },
+    { "Timothy Castagne",      "DF", 77 },
+    { "Issa Diop",             "DF", 76 },
+    { "Ryan Sessegnon",        "DF", 75 },
+    { "Jorge Cuenca",          "DF", 75 },
+    { "Maxim De Cuyper",       "DF", 80 },
+    { "Ferdi Kadioglu",        "DF", 79 },
+    { "Olivier Boscagli",      "DF", 79 },
+    { "Jan Paul van Hecke",    "DF", 80 },
+    { "Joel Veltman",          "DF", 77 },
+    { "Lewis Dunk",            "DF", 77 },
+    { "Adam Webster",          "DF", 75 },
+    { "Marc Guehi",            "DF", 82 },
+    { "Daniel Munoz",          "DF", 81 },
+    { "Maxence Lacroix",       "DF", 79 },
+    { "Tyrick Mitchell",       "DF", 78 },
+    { "Chris Richards",        "DF", 77 },
+    { "Borna Sosa",            "DF", 73 },
+    { "Nathaniel Clyne",       "DF", 70 },
+    { "Nathan Collins",        "DF", 79 },
+    { "Sepp van den Berg",     "DF", 77 },
+    { "Ethan Pinnock",         "DF", 77 },
+    { "Keane Lewis-Potter",    "DF", 76 },
+    { "Rico Henry",            "DF", 76 },
+    { "Kristoffer Ajer",       "DF", 75 },
+    { "Aaron Hickey",          "DF", 74 },
+    { "Michael Kayode",        "DF", 73 },
+    { "Bafode Diakite",        "DF", 79 },
+    { "Marcos Senesi",         "DF", 78 },
+    { "Adrien Truffert",       "DF", 77 },
+    { "Julian Araujo",         "DF", 74 },
+    { "Adam Smith",            "DF", 73 },
+    { "Alex Jimenez",          "DF", 71 }
+};
+
+vector<player> GK = {      // ผู้รักษาประตู
+    { "Alisson Becker",       "GK", 89 },
+    { "David Raya",           "GK", 87 },
+    { "Gianluigi Donnarumma", "GK", 89 },
+    { "Robert Sanchez",       "GK", 78 },
+    { "Senne Lammens",        "GK", 78 },
+    { "Nick Pope",            "GK", 81 },
+    { "Aaron Ramsdale",       "GK", 82 },
+    { "Emiliano Martinez",    "GK", 87 },
+    { "Robin Roefs",          "GK", 74 },
+    { "Jordan Pickford",      "GK", 84 },
+    { "Guglielmo Vicario",    "GK", 89 },
+    { "Bernd Leno",           "GK", 82 },
+    { "Bart Verbruggen",      "GK", 78 },
+    { "Dean Henderson",       "GK", 81 },
+    { "Caoimhin Kelleher",    "GK", 79 },
+    { "Dorde Petrovic",       "GK", 73 }
+};
+
+
+
+
+
+
+// พิมพ์ต่อได้เรยจ้าาาา  ในนี้คือฟังก์ชั่นเมนเด้อสู๋//
+
+
+
+
+}
