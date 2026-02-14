@@ -3,8 +3,7 @@
 #include<vector>
 using namespace std;
 
-struct player
-{
+struct player{
     string name;
     string position;
     int power;
@@ -61,8 +60,8 @@ vector<player> FW = {     // กองหน้า
     { "Wilson Isidor",         "FW", 72 },
     { "Eliezer Mayenda",       "FW", 71 },
     { "Romaine Mundle",        "FW", 71 },
-    { "Abdoullah Ba",          "FW", 66 },
-    { "Ian Poveda",            "FW", 69 },
+    { "Abdoullah Ba",          "FW", 70 },
+    { "Ian Poveda",            "FW", 70 },
     { "Jack Grealish",         "FW", 80 },
     { "Illiman Ndiaye",        "FW", 79 },
     { "Dwight McNeil",         "FW", 78 },
@@ -76,7 +75,7 @@ vector<player> FW = {     // กองหน้า
     { "Richarlison",           "FW", 78 },
     { "Mathys Tel",            "FW", 77 },
     { "Wilson Odobert",        "FW", 75 },
-    { "Dane Scarlett",         "FW", 67 },
+    { "Dane Scarlett",         "FW", 70 },
     { "Dejan Kulusevski",      "FW", 83 },
     { "Alex Iwobi",            "FW", 80 },
     { "Samuel Chukwueze",      "FW", 80 },
@@ -91,7 +90,7 @@ vector<player> FW = {     // กองหน้า
     { "Solly March",           "FW", 75 },
     { "Charalampos Kostoulas", "FW", 72 },
     { "Stefanos Tzimas",       "FW", 72 },
-    { "Tom Watson",            "FW", 68 },
+    { "Tom Watson",            "FW", 70 },
     { "Jean-Philippe Mateta",  "FW", 82 },
     { "Yeremy Pino",           "FW", 80 },
     { "Chrisantus Uche",       "FW", 76 },
@@ -102,8 +101,8 @@ vector<player> FW = {     // กองหน้า
     { "Dango Ouattara",        "FW", 77 },
     { "Reiss Nelson",          "FW", 75 },
     { "Igor Thiago",           "FW", 75 },
-    { "Myles Peart-Harris",    "FW", 67 },
-    { "Gustavo Nunes",         "FW", 65 },
+    { "Myles Peart-Harris",    "FW", 70 },
+    { "Gustavo Nunes",         "FW", 70 },
     { "Antoine Semenyo",       "FW", 80 },
     { "Evanilson",             "FW", 80 },
     { "Amine Adli",            "FW", 78 },
@@ -185,7 +184,7 @@ vector<player> MF = {     // กองกลาง
     { "Emile Smith Rowe",      "MF", 77 },
     { "Tom Cairney",           "MF", 74 },
     { "Harrison Reed",         "MF", 72 },
-    { "Josh King",             "MF", 68 },
+    { "Josh King",             "MF", 70 },
     { "Carlos Baleba",         "MF", 81 },
     { "Mats Wieffer",          "MF", 78 },
     { "Georginio Rutter",      "MF", 77 },
@@ -201,7 +200,7 @@ vector<player> MF = {     // กองกลาง
     { "Cheick Doucouré",       "MF", 77 },
     { "Will Hughes",           "MF", 77 },
     { "Justin Devenny",        "MF", 71 },
-    { "Naouirou Ahamada",      "MF", 68 },
+    { "Naouirou Ahamada",      "MF", 70 },
     { "Mikkel Damsgaard",      "MF", 80 },
     { "Jordan Henderson",      "MF", 79 },
     { "Mathias Jensen",        "MF", 77 },
@@ -344,7 +343,8 @@ vector<player> GK = {      // ผู้รักษาประตู
 
 
 
-// พิมพ์ต่อได้เรยจ้าาาา  ในนี้คือฟังก์ชั่นเมนเด้อสู๋//
+// พิมพ์ต่อได้เรยจ้าาาา //
+
 
 
 
