@@ -10,7 +10,7 @@ string RanBall(){
     
     int x=dist(gen)+1;
       
-    string Ball[]={"Copper","Silver","Gold","BLACK"};
+    string Ball[]={"COPPER","SILVER","GOLD","BLACK"};
 
     return Ball[x];
 }
@@ -37,7 +37,7 @@ int main(){
      
     string ball=RanBall();
             
-   cout << "Your Ball is " <<ball;
+   cout << "Your Ball is " <<ball<<" !!!!";
 
     
 }
