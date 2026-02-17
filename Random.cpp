@@ -15,7 +15,11 @@ string RanBall(){
     
     int x=dist(gen);
       
+<<<<<<< HEAD
     string Ball[]={"BRONZE","SILVER","GOLD","BLACK"};
+=======
+    string Ball[]={"COPPER","SILVER","GOLD","BLACK"};
+>>>>>>> edeef2aece51c2ec3c607dbbceee7a5116dc1c6d
 
     return Ball[x];
 }
@@ -66,7 +70,11 @@ int main(){
      
     string ball=RanBall();
             
+<<<<<<< HEAD
    cout << "Your Ball is " <<ball<<" !!!";
+=======
+   cout << "Your Ball is " <<ball<<" !!!!";
+>>>>>>> edeef2aece51c2ec3c607dbbceee7a5116dc1c6d
 
    vector<int> PLAYER = RanPlayer(ball);
    
