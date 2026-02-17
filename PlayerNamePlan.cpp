@@ -10,9 +10,6 @@ struct player
     int power;
 };
 
-int main()
-
-{
 
 vector<player> FW = {     // กองหน้า
     { "Mohamed Salah",         "FW", 91 },

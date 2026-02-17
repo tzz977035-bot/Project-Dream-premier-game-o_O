@@ -1,34 +1,63 @@
 #include<iostream>
 #include<random>
+#include<vector>
+#include <string>
 
 using namespace std;
+
+static random_device rd;
+static mt19937 gen(rd());
 
 string RanBall(){
     static random_device rd;
     static mt19937 gen(rd());
-    static uniform_int_distribution<> dist(1,3);
+    static uniform_int_distribution<> dist(0,3);
     
-    int x=dist(gen)+1;
+    int x=dist(gen);
       
-    string Ball[]={"Copper","Silver","Gold","BLACK"};
+    string Ball[]={"BRONZE","SILVER","GOLD","BLACK"};
 
     return Ball[x];
 }
 
+int GetStatByRate(const vector<int>& weights){
+    discrete_distribution<> d(weights.begin(), weights.end());
+    int tier = d(gen);
 
-
-vector<int> RanPlayer(int a,int min_val, int max_val){
-
-  vector<int> result;
-
-    static random_device rd;
-    static mt19937 gen(rd());
-     uniform_int_distribution<> dist(min_val,max_val);
+    int ranges[][2] = {{70, 76}, {77, 81}, {82, 85}, {86, 88}, {89, 91}};
     
-     for(int i=0; i<a; i++){
-        result.push_back(dist(gen));
-     }
-    
+    uniform_int_distribution<> statDist(ranges[tier][0], ranges[tier][1]);
+    return statDist(gen);
+}
+
+vector<int> RanPlayer(string ball){
+
+ vector<int> result;
+    int count = 0;
+    vector<int> weights;
+
+    if (ball == "BRONZE") {
+        count = 6 + 5 + 4 + 3 + 3; 
+        
+        weights = {70, 14, 10, 5, 1}; 
+        count = 3; 
+    } 
+    else if (ball == "SILVER") {
+        weights = {40, 25, 20, 12, 3};
+        count = 3;
+    }
+    else if (ball == "GOLD") {
+        weights = {30, 25, 25, 15, 5};
+        count = 3;
+    }
+    else if (ball == "BLACK") {
+        weights = {15, 20, 20, 30, 15};
+        count = 3;
+    }
+
+    for (int i = 0; i < count; i++) {
+        result.push_back(GetStatByRate(weights));
+    }
     return result;
      
 }
@@ -37,7 +66,17 @@ int main(){
      
     string ball=RanBall();
             
-   cout << "Your Ball is " <<ball;
+   cout << "Your Ball is " <<ball<<" !!!";
 
+   vector<int> PLAYER = RanPlayer(ball);
+   
+   cout << "\nYour Player Stats: ";
+    for (int stat : PLAYER) {
+        cout << "[" << stat << "] ";
+    }
+    cout << endl;
+    
+    return 0;
+   
     
 }
