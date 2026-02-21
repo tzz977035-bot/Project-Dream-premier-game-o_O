@@ -1,2 +1,75 @@
 #include <iostream>
+#include <vector>
+#include <string>
+
 using namespace std;
+
+
+struct Formation {
+    string name;             
+    string buffStat;         // สเตตัสที่จะได้บัฟตอนจบเกม ("AF", "DF", "MF")
+    string buffPercent;         // เปอร์เซ็นต์บัฟ (20)
+    vector<string> draftOrder; // ลำดับตำแหน่งที่จะให้เพื่อนเอาไปเขียนลูปสุ่ม
+};
+
+
+Formation chooseFormation(int playerNum) {
+    vector<Formation> availableFormations = {
+        {"4-3-3", "FW", "20", {"GK", "DF", "DF", "DF", "DF", "MF", "MF", "MF", "AF", "AF", "AF"}},
+        {"5-3-2", "DF", "20", {"GK", "DF", "DF", "DF", "DF", "DF", "MF", "MF", "MF", "AF", "AF"}},
+        {"4-4-2", "MF", "20", {"GK", "DF", "DF", "DF", "DF", "MF", "MF", "MF", "MF", "AF", "AF"}}
+    };
+
+    string playerName = (playerNum == 1) ? "Player 1 (Away)" : "Player 2 (Home)";
+    int choice = 0;
+
+    
+    cout << "\n=========================================" << endl;
+    cout << "   " << playerName << " - SELECT FORMATION" << endl;
+    cout << "=========================================" << endl;
+    for (int i = 0; i < availableFormations.size(); i++) {
+        cout << "[" << i + 1 << "] " << availableFormations[i].name 
+             << " (Buff: +" << availableFormations[i].buffPercent 
+             << "% to " << availableFormations[i].buffStat << ")" << endl;
+    }
+    cout << "=========================================" << endl;
+
+    
+    while (true) {
+        cout << "Select formation (1-3): ";
+        cin >> choice;
+        if (choice >= 1 && choice <= 3) {
+            break;
+        }
+        cout << "Invalid choice! Please enter 1, 2, or 3." << endl;
+    }
+
+    
+    Formation selected = availableFormations[choice - 1];
+    cout << "\n>> " << playerName << " selected " << selected.name << " <<" << endl;
+    
+    return selected;
+}
+
+int main() {
+    // ==========================================
+    // ส่วนที่ 1: Player 1 เลือกแผน
+    // ==========================================
+    Formation p1Formation = chooseFormation(1); 
+    
+    /* บอกเพื่อน: 
+       ตรงนี้สามารถเอา p1Formation.draftOrder ไปเขียน Loop 
+       สุ่มนักเตะ 11 คนให้ Player 1 ได้เลย
+    */
+
+    // ==========================================
+    // ส่วนที่ 2: Player 2 เลือกแผน (จะทำงานหลังจากโค้ดด้านบนเสร็จ)
+    // ==========================================
+    Formation p2Formation = chooseFormation(2);
+
+    /* บอกเพื่อน: 
+       ตรงนี้สามารถเอา p2Formation.draftOrder ไปเขียน Loop 
+       สุ่มนักเตะ 11 คนให้ Player 2 ได้เลย
+    */
+    return 0;
+}
