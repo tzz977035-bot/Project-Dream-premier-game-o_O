@@ -10,9 +10,8 @@ static random_device rd;
 static mt19937 gen(rd());
 
 string RanBall(){
-    static random_device rd;
-    static mt19937 gen(rd());
-    static uniform_int_distribution<> dist(0,3);
+    
+     uniform_int_distribution<> dist(0,3);
     
     int x=dist(gen);
       
