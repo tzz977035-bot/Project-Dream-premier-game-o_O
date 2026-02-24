@@ -4,7 +4,7 @@
 
  int main(){
 
-    cout << 44545454;
+    cout <<"MY MUNG TAE";
 
     return 0;
  }
