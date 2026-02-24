@@ -2,6 +2,7 @@
 #include<random>
 #include<vector>
 #include <string>
+#include "PlayerNamePlan.cpp"
 
 using namespace std;
 
@@ -15,11 +16,8 @@ string RanBall(){
     
     int x=dist(gen);
       
-<<<<<<< HEAD
-    string Ball[]={"BRONZE","SILVER","GOLD","BLACK"};
-=======
+
     string Ball[]={"COPPER","SILVER","GOLD","BLACK"};
->>>>>>> edeef2aece51c2ec3c607dbbceee7a5116dc1c6d
 
     return Ball[x];
 }
@@ -34,7 +32,7 @@ int GetStatByRate(const vector<int>& weights){
     return statDist(gen);
 }
 
-vector<int> RanPlayer(string ball){
+vector<int> Ranpower(string ball){
 
  vector<int> result;
     int count = 0;
@@ -63,28 +61,36 @@ vector<int> RanPlayer(string ball){
         result.push_back(GetStatByRate(weights));
     }
     return result;
-     
+    
 }
+player GetRandomPlayerByStat(int targetStat, const vector<player>& pool) {
+    vector<player> matches;
+    
 
-int main(){
-     
-    string ball=RanBall();
-            
-<<<<<<< HEAD
-   cout << "Your Ball is " <<ball<<" !!!";
-=======
-   cout << "Your Ball is " <<ball<<" !!!!";
->>>>>>> edeef2aece51c2ec3c607dbbceee7a5116dc1c6d
-
-   vector<int> PLAYER = RanPlayer(ball);
-   
-   cout << "\nYour Player Stats: ";
-    for (int stat : PLAYER) {
-        cout << "[" << stat << "] ";
+    for (const auto& p : pool) {
+        if (p.power == targetStat) {
+            matches.push_back(p);
+        }
     }
-    cout << endl;
-    
-    return 0;
-   
-    
+
+
+    if (matches.empty()) {
+        int closest = -1;
+        int minDiff = 100;
+        for (const auto& p : pool) {
+            if (abs(p.power - targetStat) < minDiff) {
+                minDiff = abs(p.power - targetStat);
+                closest = p.power;
+            }
+        }
+        for (const auto& p : pool) {
+            if (p.power == closest) matches.push_back(p);
+        }
+    }
+
+
+    uniform_int_distribution<> d(0, matches.size() - 1);
+    static mt19937 g(random_device{}()); 
+    return matches[d(g)];
 }
+
