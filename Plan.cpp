@@ -35,13 +35,15 @@ Formation chooseFormation(int playerNum) {
     cout << "=========================================" << endl;
 
     
-    while (true) {
+   while (true) {
         cout << "Select formation (1-3): ";
-        cin >> choice;
-        if (choice >= 1 && choice <= 3) {
-            break;
+        if (cin >> choice) { 
+            if (choice >= 1 && choice <= 3) break;
+            cout << "Invalid choice! Please enter 1, 2, or 3." << endl;
+        } else {
+            cout << "Invalid Input! Please enter a NUMBER (1-3)." << endl;
+            cin.clear(); cin.ignore(1000, '\n'); 
         }
-        cout << "Invalid choice! Please enter 1, 2, or 3." << endl;
     }
 
     
@@ -62,19 +64,20 @@ int main() {
     cout << "      PLAYER 1: DRAFTING 11 PLAYERS      " << endl;
     cout << "=========================================" << endl;
 
-    for (int i = 0; i < p1Formation.draftOrder.size(); i++) {
+        for (int i = 0; i < p1Formation.draftOrder.size(); i++) {
         string pos = p1Formation.draftOrder[i];
         string ball = RanBall();
-        vector<int> powerOptions = Ranpower(ball); // สุ่มมา 3 พลัง
+        vector<int> powerOptions = Ranpower(ball);
 
         cout << "\nROUND [" << i + 1 << "/11] POSITION: " << pos << " (" << ball << ")" << endl;
         cout << "Identify your targets:" << endl;
 
-        // --- ส่วนที่เพิ่มเข้ามา: แสดงชื่อนักเตะก่อนเลือก ---
         vector<player> previews;
+        vector<player>& currentPool = GetPoolByPosition(pos); 
+
         for (int j = 0; j < powerOptions.size(); j++) {
-            // จำลองการสุ่มดูว่าถ้าเลือกพลังนี้จะได้ใคร
-            player p = GetRandomPlayerByStat(powerOptions[j], GetPoolByPosition(pos));
+            
+            player p = GetRandomPlayerByStat(powerOptions[j], currentPool);
             previews.push_back(p);
             cout << "  [" << j + 1 << "] " << p.name << " (Power: " << p.power << ")" << endl;
         }
@@ -82,21 +85,30 @@ int main() {
         int choice;
         while (true) {
             cout << "Draft player (1-3): ";
-            cin >> choice;
-            if (choice >= 1 && choice <= 3) break;
-            cout << "Invalid choice! Please enter 1, 2, or 3." << endl;
+            if (cin >> choice) {
+                if (choice >= 1 && choice <= 3) break;
+                cout << "Invalid choice! Please enter 1, 2, or 3." << endl;
+            } else {
+                cout << "Invalid Input! Please enter a NUMBER (1-3)." << endl;
+                cin.clear(); cin.ignore(1000, '\n');
+            }
         }
 
-        // เก็บนักเตะที่เลือกเข้าทีม
-        team1.push_back(previews[choice - 1]);
+        team1.push_back(previews[choice - 1]); 
+
+
+        for (int j = 0; j < previews.size(); j++) {
+            if (j != (choice - 1)) {
+                currentPool.push_back(previews[j]);
+            }
+        }
         cout << ">> Confirmed: " << previews[choice - 1].name << " is now in your squad!" << endl;
         cout << "-----------------------------------------" << endl;
     }
-
     // ---------------------------------------------------------
     // PLAYER 2 (HOME) PHASE (ทำแบบเดียวกัน)
     // ---------------------------------------------------------
-    cout << "\nPress Enter to start Player 2's turn...";
+ cout << "\nPress Enter to start Player 2's turn...";
     cin.ignore(); cin.get();
 
     Formation p2Formation = chooseFormation(2);
@@ -111,26 +123,42 @@ int main() {
         string ball = RanBall();
         vector<int> powerOptions = Ranpower(ball);
 
+        
         vector<player> previews;
+        vector<player>& currentPool = GetPoolByPosition(pos); 
+
         cout << "\nROUND [" << i + 1 << "/11] POSITION: " << pos << " (" << ball << ")" << endl;
         for (int j = 0; j < powerOptions.size(); j++) {
-            player p = GetRandomPlayerByStat(powerOptions[j], GetPoolByPosition(pos));
+           
+            player p = GetRandomPlayerByStat(powerOptions[j], currentPool);
             previews.push_back(p);
             cout << "  [" << j + 1 << "] " << p.name << " (Power: " << p.power << ")" << endl;
         }
 
+        
         int choice;
         while (true) {
             cout << "Draft player (1-3): ";
-            cin >> choice;
-            if (choice >= 1 && choice <= 3) break;
-            cout << "Invalid choice! Please enter 1, 2, or 3." << endl;
+            if (cin >> choice) {
+                if (choice >= 1 && choice <= 3) break;
+                cout << "Invalid choice! Please enter 1, 2, or 3." << endl;
+            } else {
+                cout << "Invalid Input! Please enter a NUMBER (1-3)." << endl;
+                cin.clear(); cin.ignore(1000, '\n');
+            }
         }
 
+
         team2.push_back(previews[choice - 1]);
+
+        
+        for (int j = 0; j < previews.size(); j++) {
+            if (j != (choice - 1)) {
+                currentPool.push_back(previews[j]);
+            }
+        }
+
         cout << ">> Confirmed: " << previews[choice - 1].name << " is now in your squad!" << endl;
         cout << "-----------------------------------------" << endl;
     }
-
-    return 0;
 }

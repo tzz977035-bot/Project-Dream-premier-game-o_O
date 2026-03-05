@@ -51,25 +51,26 @@ vector<player>& GetPoolByPosition(string pos) {
     if (pos == "MF") return MF;
     return FW; 
 }
-player GetRandomPlayerByStat(int targetStat, const vector<player>& pool) {
-    vector<player> matches;
-    for (const auto& p : pool) {
-        if (p.power == targetStat) matches.push_back(p);
+player GetRandomPlayerByStat(int targetStat, vector<player>& pool) {
+    if (pool.empty()) return {"Empty", 0};
+
+    vector<int> matches;
+    for (int i = 0; i < pool.size(); i++) {
+        if (pool[i].power == targetStat) matches.push_back(i);
     }
 
     if (matches.empty()) {
-        int minDiff = 100, closest = -1;
-        for (const auto& p : pool) {
-            if (abs(p.power - targetStat) < minDiff) {
-                minDiff = abs(p.power - targetStat);
-                closest = p.power;
-            }
-        }
-        for (const auto& p : pool) {
-            if (p.power == closest) matches.push_back(p);
+        int minDiff = 100;
+        for (const auto& p : pool) minDiff = min(minDiff, abs(p.power - targetStat));
+        for (int i = 0; i < pool.size(); i++) {
+            if (abs(pool[i].power - targetStat) == minDiff) matches.push_back(i);
         }
     }
 
     uniform_int_distribution<> d(0, matches.size() - 1);
-    return matches[d(gen)];
+    int selectedIdx = matches[d(gen)];
+    
+    player chosen = pool[selectedIdx]; 
+    pool.erase(pool.begin() + selectedIdx); 
+    return chosen;
 }
