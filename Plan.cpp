@@ -161,4 +161,41 @@ int main() {
         cout << ">> Confirmed: " << previews[choice - 1].name << " is now in your squad!" << endl;
         cout << "-----------------------------------------" << endl;
     }
+    cout << "\n=========================================" << endl;
+    cout << "     ALL SET! ENTERING THE DUEL!         " << endl;
+    cout << "=========================================" << endl;
+
+    Team awayTeam;
+    awayTeam.teamName = "Player 1 (Away)";
+    awayTeam.buffedPosition = p1Formation.buffStat;
+    awayTeam.formationBuffPercent = stoi(p1Formation.buffPercent);
+
+    for (int i = 0; i < team1.size(); i++) {
+        Player p;
+        p.name = team1[i].name;
+        p.position = team1[i].position;
+        p.stat = team1[i].power; 
+        awayTeam.players.push_back(p);
+    }
+
+    Team homeTeam;
+    homeTeam.teamName = "Player 2 (Home)";
+    homeTeam.buffedPosition = p2Formation.buffStat;
+    homeTeam.formationBuffPercent = stoi(p2Formation.buffPercent);
+
+    for (int i = 0; i < team2.size(); i++) {
+        Player p;
+        p.name = team2[i].name;
+        p.position = team2[i].position;
+        p.stat = team2[i].power; 
+        homeTeam.players.push_back(p);
+    }
+
+    cout << "\nPress Enter to Kick-off...";
+    cin.ignore(); cin.get();
+    
+    
+    startMatch(homeTeam, awayTeam);
+
+    return 0; 
 }
