@@ -1,7 +1,9 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <windows.h>
 #include "Random.cpp"
+#include "Duel.cpp"
 using namespace std;
 
 
@@ -54,9 +56,11 @@ Formation chooseFormation(int playerNum) {
 }
 
 int main() {
-    // ---------------------------------------------------------
-    // PLAYER 1 (AWAY) PHASE
-    // ---------------------------------------------------------
+    system("chcp 65001 > nul");
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+    srand(time(0)); 
+
     Formation p1Formation = chooseFormation(1);
     vector<player> team1;
 
@@ -64,7 +68,7 @@ int main() {
     cout << "      PLAYER 1: DRAFTING 11 PLAYERS      " << endl;
     cout << "=========================================" << endl;
 
-        for (int i = 0; i < p1Formation.draftOrder.size(); i++) {
+    for (int i = 0; i < p1Formation.draftOrder.size(); i++) {
         string pos = p1Formation.draftOrder[i];
         string ball = RanBall();
         vector<int> powerOptions = Ranpower(ball);
@@ -76,10 +80,9 @@ int main() {
         vector<player>& currentPool = GetPoolByPosition(pos); 
 
         for (int j = 0; j < powerOptions.size(); j++) {
-            
             player p = GetRandomPlayerByStat(powerOptions[j], currentPool);
             previews.push_back(p);
-            cout << "  [" << j + 1 << "] " << p.name << " (Power: " << p.power << ")" << endl;
+            cout << "  [" << j + 1 << "] " << p.name << endl; 
         }
 
         int choice;
@@ -96,7 +99,6 @@ int main() {
 
         team1.push_back(previews[choice - 1]); 
 
-
         for (int j = 0; j < previews.size(); j++) {
             if (j != (choice - 1)) {
                 currentPool.push_back(previews[j]);
@@ -105,14 +107,14 @@ int main() {
         cout << ">> Confirmed: " << previews[choice - 1].name << " is now in your squad!" << endl;
         cout << "-----------------------------------------" << endl;
     }
-    // ---------------------------------------------------------
-    // PLAYER 2 (HOME) PHASE (ทำแบบเดียวกัน)
-    // ---------------------------------------------------------
- cout << "\nPress Enter to start Player 2's turn...";
-    cin.ignore(); cin.get();
+
+    cin.ignore(10000, '\n');
+
+    cout << "\nPress Enter to start Player 2's turn...";
+    cin.get(); 
 
     Formation p2Formation = chooseFormation(2);
-    vector<player> team2;
+    vector<player> team2; 
 
     cout << "\n=========================================" << endl;
     cout << "      PLAYER 2: DRAFTING 11 PLAYERS      " << endl;
@@ -122,19 +124,16 @@ int main() {
         string pos = p2Formation.draftOrder[i];
         string ball = RanBall();
         vector<int> powerOptions = Ranpower(ball);
-
         
         vector<player> previews;
         vector<player>& currentPool = GetPoolByPosition(pos); 
 
         cout << "\nROUND [" << i + 1 << "/11] POSITION: " << pos << " (" << ball << ")" << endl;
         for (int j = 0; j < powerOptions.size(); j++) {
-           
             player p = GetRandomPlayerByStat(powerOptions[j], currentPool);
             previews.push_back(p);
-            cout << "  [" << j + 1 << "] " << p.name << " (Power: " << p.power << ")" << endl;
+            cout << "  [" << j + 1 << "] " << p.name << endl; 
         }
-
         
         int choice;
         while (true) {
@@ -148,9 +147,7 @@ int main() {
             }
         }
 
-
         team2.push_back(previews[choice - 1]);
-
         
         for (int j = 0; j < previews.size(); j++) {
             if (j != (choice - 1)) {
@@ -161,8 +158,9 @@ int main() {
         cout << ">> Confirmed: " << previews[choice - 1].name << " is now in your squad!" << endl;
         cout << "-----------------------------------------" << endl;
     }
+
     cout << "\n=========================================" << endl;
-    cout << "     ALL SET! ENTERING THE DUEL!         " << endl;
+    cout << "  ALL SET! PRESS ENTER THE DUEL ! ! ! !" << endl;
     cout << "=========================================" << endl;
 
     Team awayTeam;
@@ -171,7 +169,7 @@ int main() {
     awayTeam.formationBuffPercent = stoi(p1Formation.buffPercent);
 
     for (int i = 0; i < team1.size(); i++) {
-        Player p;
+        Player p; 
         p.name = team1[i].name;
         p.position = team1[i].position;
         p.stat = team1[i].power; 
@@ -184,18 +182,19 @@ int main() {
     homeTeam.formationBuffPercent = stoi(p2Formation.buffPercent);
 
     for (int i = 0; i < team2.size(); i++) {
-        Player p;
+        Player p; 
         p.name = team2[i].name;
         p.position = team2[i].position;
         p.stat = team2[i].power; 
         homeTeam.players.push_back(p);
     }
 
+    cin.ignore(10000, '\n'); 
     cout << "\nPress Enter to Kick-off...";
-    cin.ignore(); cin.get();
-    
-    
+    cin.get(); 
+
     startMatch(homeTeam, awayTeam);
 
+    system("pause");
     return 0; 
 }
